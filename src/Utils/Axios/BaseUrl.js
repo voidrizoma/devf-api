@@ -1,9 +1,9 @@
 import axios from "axios";
 
 const axiosClient = axios.create({
-    baseURL: "https://covid-api.mmediagroup.fr/v1/",
+    baseURL: "https://api.fbi.gov/wanted/v1/",
     headers: {
-        "Content-Type":"application/json; charset=utf8"
+        "Content-Type":"application/json; charset=utf8",
     }
 })
 
