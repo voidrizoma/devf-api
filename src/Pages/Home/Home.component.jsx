@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { getRequest } from "../../Utils/Axios/AxiosIntance";
 import Card from "../../Components/Card";
 import Layout from "../../Components/Layout/Layout.component";
@@ -14,10 +14,11 @@ export default function Home() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  console.log(page);
-  useEffect(async () => {
+  useEffect(() => {
+   (async () => {
     const dataResults = await getRequest(`list?page=${page}`);
     setData(dataResults.data.items);
+   })()
   }, [page]);
 
   return !data.length ? (
